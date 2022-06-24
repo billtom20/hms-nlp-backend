@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.github.backend.nlp.hms">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true">
+        <service
+            android:name=".HmsLocationService"
+            android:exported="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/location_backend_name"
+            android:permission="android.permission.ACCESS_COARSE_LOCATION">
+            <intent-filter>
+                <action android:name="org.microg.nlp.LOCATION_BACKEND" />
+            </intent-filter>
+            <meta-data
+                android:name="org.microg.nlp.BACKEND_SUMMARY"
+                android:value="@string/summary" />
+        </service>
+        <service
+            android:name=".GeocoderService"
+            android:exported="true"
+            android:icon="@android:drawable/ic_dialog_map"
+            android:label="android.location.Geocoder">
+            <intent-filter>
+                <action android:name="org.microg.nlp.GEOCODER_BACKEND" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

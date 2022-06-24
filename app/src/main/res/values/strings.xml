@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">hms-nlp-backend</string>
+    <string name="location_backend_name">HMS Core Location Service</string>
+    <string name="summary">Locate using HMS Core Location Kit</string>
+</resources>
